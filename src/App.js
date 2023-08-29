@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import HomePage from './components/HomePage';
+import Success from './components/Success';
 
 function App() {
+
+  function handleClick() {
+    setSubscribed(true);
+  }
+
+  function handleDismissed() {
+    setSubscribed(false);
+  }
+
+  const [subscribed, setSubscribed] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    !subscribed ?
+      <HomePage handleClick={handleClick} /> : <Success handleDismissed={handleDismissed} />
+  )
 }
+
 
 export default App;
