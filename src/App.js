@@ -5,6 +5,8 @@ import Success from './components/Success';
 
 function App() {
 
+  const [email, setEmail] = useState('')
+
   function handleClick() {
     setSubscribed(true);
   }
@@ -16,7 +18,7 @@ function App() {
   const [subscribed, setSubscribed] = useState(false);
   return (
     !subscribed ?
-      <HomePage handleClick={handleClick} /> : <Success handleDismissed={handleDismissed} />
+      <HomePage handleClick={handleClick} email={email} setEmail={setEmail} /> : <Success handleDismissed={handleDismissed} email={email} />
   )
 }
 

@@ -3,7 +3,7 @@ import List from './List'
 import CallToAction from './CallToAction'
 import Button from './Button'
 
-export default function Content({ handleClick }) {
+export default function Content({ handleClick, email, setEmail }) {
     return (
         <div className='p-7 text-base lg:w-80 lg:p-4' >
             <div>
@@ -16,7 +16,7 @@ export default function Content({ handleClick }) {
                 <List list='And much more!' />
             </div>
             <div>
-                <CallToAction />
+                <CallToAction email={email} setEmail={setEmail} />
             </div>
             <div className='my-8'>
                 <Button content='Subscribe to my monthly newsletter' handleClick={handleClick} />
