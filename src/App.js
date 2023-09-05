@@ -5,8 +5,6 @@ import Success from './components/Success';
 
 function App() {
 
-  const [email, setEmail] = useState('')
-
   function handleClick() {
     setSubscribed(true);
   }
@@ -15,10 +13,20 @@ function App() {
     setSubscribed(false);
   }
 
+  function inputVal(value) {
+    setEmail(value);
+  }
+
   const [subscribed, setSubscribed] = useState(false);
+  const [email, setEmail] = useState('');
+
+
   return (
     !subscribed ?
-      <HomePage handleClick={handleClick} email={email} setEmail={setEmail} /> : <Success handleDismissed={handleDismissed} email={email} />
+
+      <HomePage handleClick={handleClick} inputVal={inputVal} /> :
+
+      <Success handleDismissed={handleDismissed} email={email} />
   )
 }
 

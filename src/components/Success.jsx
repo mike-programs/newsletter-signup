@@ -12,7 +12,6 @@ export default function Success({ handleDismissed, email }) {
                 <div>
                     <h1 className='font-bold text-4xl my-5'>Thanks for Subscribing!</h1>
                     <p className='leading-6'>
-                        {/* A confirmation email has been sent to <span className='font-bold'>ash@loremcompany.com</span>. */}
                         A confirmation email has been sent to <span className='font-bold'>{email}</span>.
                         Please open it and click the button inside to confirm your
                         subscription
